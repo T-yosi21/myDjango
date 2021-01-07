@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'myDjango.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': str(BASE_DIR / 'db.sqlite3'),
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -125,20 +125,20 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 IMAGE_ROOT = os.path.join(BASE_DIR, 'images');
 IMAGE_URL = '/images/'
 
-import dj_database_url
-DATABASES['default'] = dj_database_url.config()
+# import dj_database_url
+# DATABASES['default'] = dj_database_url.config()
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = ['*']
 
-STATIC_ROOT = 'staticfiles'
+# STATIC_ROOT = 'staticfiles'
 
-DEBUG = False
+# DEBUG = False
 
-try:
-    from .local_settings import *
-except ImportError:
-    pass
+# try:
+#     from .local_settings import *
+# except ImportError:
+#     pass
 
 # payjp.api_key = "sk_test_a973e2e05d46cddc0d7d76c2"
