@@ -1,0 +1,72 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block header %}
+  <link rel="stylesheet" href="{% static 'index.css'%}" type="text/css" />
+{% endblock header %} 
+{% block content %}
+
+
+<header>
+  <h1 class="h1">Welcome to Dapp App.</h1>
+    {% if user.is_anonymous %}
+    <div class="loginNew">
+      <a href="{% url 'Dapp:signup' %}">新規登録またはログインはこちら</a>
+    </div>
+    {% else %}
+    <div class="login">
+      <h2>ようこそ{{ user }}様!
+      <a href="{% url 'Dapp:logout' %}" class="logout">ログアウト</a>
+      </h2>
+    </div>
+    {% endif %} 
+</header>
+
+<div class="create">
+    <a href="{% url 'Dapp:ProductCreate' %}">商品を投稿する</a>
+</div>
+
+<main>
+  <div class="product">
+    {% for list in object_lists %}
+    <article>
+      <section>
+        <div class="title-header">
+          <p>商品名：{{list.title}}</p>
+        </div>
+      </section>
+      <section>
+        <div class="section">
+          <p>お値段：{{list.Price}}円</p>
+        </div>
+      </section>
+      <section>
+        <div class="section">
+          <p>商品の説明：{{list.Explanation}}</p>
+        </div>
+      </section>
+      <section>
+        <div class="section">
+          <p>カテゴリー：{{list.Choices}}<p>
+        </div>
+      </section>
+      <section>
+        <div class="section">
+          <!-- <p><img src="/{{list.images.url}}" />画像：{{list.images.url}}</p> -->
+        </div>
+      </section>
+      <section>
+        <div class="section">
+          <p>投稿日：{{list.pub_date}}<p>
+        </div>
+      </section>
+      <div class="right">
+        <a href="{% url 'Dapp:ProductUpdate' list.id %}">編集する</a>
+        <a href="{% url 'Dapp:ProductDetail' list.id %}">詳細をみる</a>
+        <a href="{% url 'Dapp:ProductDelete' list.id %}">削除！</a>
+      </div>
+    </article>
+    {% endfor%}
+  </div>
+</main>
+{% endblock content %}
+

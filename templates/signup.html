@@ -1,0 +1,26 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+  <link rel='stylesheet' type='text/css' href="{% static 'style.css' %}">
+{% endblock css %}
+{% block content %}
+
+<div class="min">
+  <div class="from-area">
+    <div class="from">
+      <h1>ユーザーを登録してください</h1>
+      <form action="{% url 'Dapp:signup' %}" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="登録" class="btn btn--orange">
+      </form>
+      <div class="a link">
+        <a  href= "{% url 'Dapp:login' %}">登録済みの方はこちら</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
+

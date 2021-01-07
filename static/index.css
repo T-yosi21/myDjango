@@ -1,0 +1,83 @@
+/* ヘッター部分 */
+header {
+  display: flex;
+  justify-content: space-around;
+  background-color: rgba(217, 231, 21, 0.445);
+  height: 60px;
+}
+
+.loginNew {
+  padding-top: 15px;
+}
+
+
+.login h2 {
+  padding-top: 10px;
+  font-size: 25px;
+}
+
+.logout {
+  font-size: 15px;
+}
+
+.create {
+  display: inline-block;
+  margin: 10px;
+  background-color: bisque;
+}
+/* メイン */
+
+
+main {
+  justify-content: center;
+  align-items: center;
+  height: 550px;
+  background-color: white;
+}
+
+article {
+  display: inline-block;
+  background-color: rgba(170, 179, 170, 0.288);
+  padding: 30px;
+  margin: 20px 10px ;
+  width: 390px;
+  height: 350px;
+}
+
+/* タイトル部分 */
+.title-header {
+  font-size: 30px;
+  text-align: center;
+}
+
+
+p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+a:hover{
+  color : #ff7043;
+  text-decoration: none;
+}
+a {
+  text-decoration: none;
+}
+
+.right {
+  margin: 0 0 0 auto;
+} 
+/* エラー文 */
+.errorlist {
+  color: red;
+  font-size: 15px;
+}
+
+ul {
+  list-style: none;
+}
+
+.h1 {
+  font-size: 40px;
+}

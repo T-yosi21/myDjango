@@ -1,0 +1,37 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block header %}
+<link rel="stylesheet" href="{% static 'detail.css'%}" type="text/css" />
+<!-- <script src="{% static 'pay.js'%}"></script> -->
+{% endblock header %} 
+
+{% block content %}
+<div class="min">
+  <div class="from-area">
+    <div class="from">
+      <h2 class="title">商品内容</h2>
+      <form action="" method="post">
+        <p>商品名：{{ objects.title }}</p>
+        <p>値段：{{ objects.Price }}円</p>
+        <p>商品の説明：{{ objects.Explanation }}</p>
+        <p>カテゴリー：{{ objects.Choices}}</p>
+        <a href="{% url 'Dapp:ProductList' %}">一覧ページに戻る</a>
+      </form>
+      <div>
+        <h3>コメント</h3>
+        <form method="post" action="">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <input type="submit">
+        </form>
+        <hr>
+        {% for comment in comments %}
+          ユーザー名: {{ comment.author }}<br>
+          {{ comment.text }}<br>
+          <hr>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

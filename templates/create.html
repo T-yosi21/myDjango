@@ -1,0 +1,22 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block header %}
+<link rel="stylesheet" href="{% static 'style.css'%}" type="text/css" />
+<!-- <script src="{% static 'pay.js'%}"></script> -->
+{% endblock header %} 
+{% block content %}
+
+
+<div class="min">
+  <div class="from-area">
+    <div class="from">
+      <h1>商品投稿フォーム</h1>
+      <form action="{% url 'Dapp:ProductCreate' %}" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="商品を投稿" class="btn btn--orange">
+      </form>
+  </div>
+</div>
+{% endblock content %}
+

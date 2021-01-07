@@ -1,0 +1,53 @@
+
+
+.min {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 550px;
+  background-color: white;
+}
+
+.from-area {
+  background-color:whitesmoke;
+  padding: 30px;
+  box-shadow: bisque;
+}
+.from{
+    margin: 20px 30px 30px;
+}
+.errorlist {
+  color: red;
+  font-size: 15px;
+}
+/* エラー文 */
+ul {
+  list-style: none;
+}
+
+h1 {
+  margin-bottom: 20px;
+
+}
+
+.a {
+  margin-top: 20px;
+}
+
+a:hover{
+  color : #ff7043;
+  text-decoration: none;
+}
+
+.btn--orange,
+input.btn--orange {
+  color: #fff;
+  background-color: #eb6100;
+}
+.btn--orange:hover,
+input.btn--orange:hover {
+  color: #fff;
+  background: #f56500;
+}
+
+

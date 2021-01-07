@@ -1,0 +1,23 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block header %}
+  <link rel="stylesheet" href="{% static 'update.css'%}" type="text/css" />
+{% endblock header %} 
+{% block content %}
+
+
+<div class="min">
+  <div class="form">
+    <h2>商品を編集する</h2>
+    <form action="" method="post">
+    {% csrf_token %}
+    <p> 商品名：{{ form.title }}</p>
+    <p>値段：{{ form.Price }}</p>
+    <p>商品の説明：{{ form.Explanation }}</p>
+    <p>カテゴリー：{{ form.Choices }}</p>
+    <input type="submit" value="修正する" class="btn btn--orange" />
+    <a href="{% url 'Dapp:ProductList' %}">一覧ページに戻る</a>
+  </div>
+</div>
+
+{% endblock content %}

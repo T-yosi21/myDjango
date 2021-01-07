@@ -1,0 +1,52 @@
+.min {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 550px;
+  background-color: white;
+}
+
+
+.form {
+    margin: 50px;
+    padding: 30px;
+    background-color: whitesmoke;
+}
+.title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+textarea {
+  height: 100px;
+}
+.errorlist {
+  color: red;
+  font-size: 15px;
+}
+/* エラー文 */
+ul {
+  list-style: none;
+}
+
+.a {
+  text-decoration: none;
+}
+
+.a.link {
+  margin-top: 20px;
+}
+a:hover{
+  color : #ff7043;
+  text-decoration: none;
+}
+.btn--orange,
+input.btn--orange {
+  color: #fff;
+  background-color: #eb6100;
+}
+.btn--orange:hover,
+input.btn--orange:hover {
+  color: #fff;
+  background: #f56500;
+}
+
